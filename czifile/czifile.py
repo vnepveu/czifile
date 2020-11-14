@@ -203,7 +203,7 @@ except ImportError:
     try:
         import imagecodecs_lite as imagecodecs
     except ImportError:
-        imagecodecs = None
+        raise ModuleNotFoundError("This module requires imagecodecs for reading .czi files")
 
 from tifffile import (
     FileHandle, memmap, lazyattr, repeat_nd, product, stripnull, format_size,
